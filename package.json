@@ -1,14 +1,14 @@
 {
   "name": "language-snamlscript",
   "main": "./lib/language-snamlscript",
-  "version": "0.0.1",
-  "description": "A short description of your package",
+  "version": "5.1.0",
+  "description": "SnamlScript syntax highlight for Atom editor.",
   "keywords": [
   ],
   "activationCommands": {
     "atom-workspace": "language-snamlscript:toggle"
   },
-  "repository": "https://github.com/Snaml/SnamlScript",
+  "repository": "https://github.com/Neatware/snamlscript-syntax",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
