@@ -1,0 +1,239 @@
+'fileTypes': [
+  'sml'
+]
+'firstLineMatch': '^#!/.*\\btclsh\\b'
+'name': 'SnamlScript'
+'patterns': [
+  {
+    'begin': '(?<=^|;)\\s*((#))'
+    'beginCaptures':
+      '1':
+        'name': 'comment.line.number-sign.sml'
+      '2':
+        'name': 'punctuation.definition.comment.sml'
+    'contentName': 'comment.line.number-sign.sml'
+    'end': '\\n'
+    'patterns': [
+      {
+        'match': '(\\\\\\\\|\\\\\\n)'
+      }
+    ]
+  }
+  {
+    'captures':
+      '1':
+        'name': 'keyword.control.sml'
+    'match': '(?<=^|[\\[{;])\\s*(if|while|for|catch|return|break|continue|switch|exit|foreach)\\b'
+  }
+  {
+    'captures':
+      '1':
+        'name': 'keyword.control.sml'
+    'match': '(?<=^|})\\s*(then|elseif|else)\\b'
+  }
+  {
+    'captures':
+      '1':
+        'name': 'keyword.other.sml'
+      '2':
+        'name': 'entity.name.function.sml'
+    'match': '^\\s*(proc)\\s+([^\\s]+)'
+  }
+  {
+    'captures':
+      '1':
+        'name': 'keyword.other.sml'
+    'match': '(?<=^|[\\[{;])\\s*(after|append|array|auto_execok|auto_import|auto_load|auto_mkindex|auto_mkindex_old|auto_qualify|auto_reset|bgerror|binary|cd|clock|close|concat|dde|encoding|eof|error|eval|exec|expr|fblocked|fconfigure|fcopy|file|fileevent|filename|flush|format|gets|glob|global|history|http|incr|info|interp|join|lappend|library|lindex|linsert|list|llength|load|lrange|lreplace|lsearch|lset|lsort|memory|msgcat|namespace|open|package|parray|pid|pkg::create|pkg_mkIndex|proc|puts|pwd|re_syntax|read|registry|rename|resource|scan|seek|set|socket|SafeBase|source|split|string|subst|Tcl|tcl_endOfWord|tcl_findLibrary|tcl_startOfNextWord|tcl_startOfPreviousWord|tcl_wordBreakAfter|tcl_wordBreakBefore|tcltest|tclvars|tell|time|trace|unknown|unset|update|uplevel|upvar|variable|vwait|_a|a_|__a|_a_|__a_|_abbr|abbr_|__abbr|_abbr_|__abbr|_address|address_|__address|_address_|__address_|_area|area_|__area|_area_|__area_|_article|article_|__article|_article_|__article_|_aside|aside_|__aside|_aside_|__aside|_audio|audio_|__audio|_audio_|__audio_|_b|b_|__b|_b_|__b_|_base|base_|__base|_base_|__base_|_bb|bb_|__bb|_bb_|__bb_|_bdo|bdo_|__bdo|_bdo_|__bdo_|_blockquote|blockquote_|__blockquote|_blockquote_|__blockquote_|_body|body_|__body|_body_|__body_|_br|br_|__br|_br_|__br_|_button|button_|__button|_button_|__button_|_canvas|canvas_|__canvas|_canvas_|__canvas_|_caption|caption_|__caption|_caption_|__caption_|_cite|cite_|__cite|_cite_|__cite_|_code|code_|__code|_code_|__code_|_col|col_|__col|_col_|__col_|_colgroup|colgroup_|__colgroup|_colgroup_|__colgroup_|_command|command_|__command|_command_|__command_|_datagrid|datagrid_|__datagrid|_datagrid_|__datagrid_|_datalist|datalist_|__datalist|_datalist_|__datalist_|_dd|dd_|__dd|_dd_|__dd_|_del|del_|__del|_del_|__del_|_details|details_|__details|_details_|__details_|_dialog|dialog_|__dialog|_dialog_|__dialog_|_dfn|dfn_|__dfn|_dfn_|__dfn_|_div|div_|__div|_div_|__div_|_dl|dl_|__dl|_dl_|__dl_|_dt|dt_|__dt|_dt_|__dt_|_em|em_|__em|_em_|__em_|_embed|embed_|__embed|_embed_|__embed_|_eventsource|eventsource_|__eventsource|_eventsource_|__eventsource_|_fieldset|fieldset_|__fieldset|_fieldset_|__fieldset_|_figure|figure_|__figure|_figure_|__figure_|_footer|footer_|__footer|_footer_|__footer_|_form|form_|__form|_form_|__form_|_h1|h1_|__h1|_h1_|__h1_|_h2|h2_|__h2|_h2_|__h2_|_h3|h3_|__h3|_h3_|__h3_|_h4|h4_|__h4|_h4_|__h4_|_h5|h5_|__h5|_h5_|__h5_|_h6|h6_|__h6|_h6_|__h6_|_head|head_|__head|_head_|__head_|_header|header_|__header|_header_|__header_|_hr|hr_|__hr|_hr_|__hr_|_html|html_|__html|_html_|__html_|_i|i_|__i|_i_|__i_|_iframe|iframe_|__iframe|_iframe_|__iframe_|_img|img_|__img|_img_|__img_|_input|input_|__input|_input_|__input_|_ins|ins_|__ins|_ins_|__ins_|_kbd|kbd_|__kbd|_kdb_|__kbd_|_label|label_|__label|_label_|__label_|_legend|legend_|__legend|_legend_|__legend_|_li|li_|__li|_li_|__li_|_link|link_|__link|_link_|__link_|_mark|mark_|__mark|_mark_|__mark_|_map|map_|__map|_map_|__map_|_menu|menu_|__menu|_menu_|__menu_|_meta|meta_|__meta|_meta_|__meta_|_meter|meter_|__meter|_meter_|__meter_|_nav|nav_|__nav|_nav_|__nav_|_noscript|noscript_|__noscript|_noscript_|__noscript_|_object|object_|__object|_object_|__object_|_ol|ol_|__ol|_ol_|__ol_|_optgroup|optgroup_|__optgroup|_optgroup_|__optgroup_|_option|option_|__option|_option_|__option_|_output|output_|__output|_output_|__output_|_p|p_|__p|_p_|__p_|_param|param_|__param|_param_|__param_|_pre|pre_|__pre|_pre_|__pre_|_progress|progress_|__progress|_progress_|__progress_|_q|q_|__q|_q_|__q_|_rp|rp_|__rp|_rp_|__rp_|_rt|rt_|__rt|_rt_|__rt_|_samp|samp_|__samp|_samp_|__samp_|_script|script_|__script|_script_|__script_|_section|section_|__section|_section_|__section_|_select|select_|__select|_select_|__select_|_small|small_|__small|_small_|__small_|_source|source_|__source|_source_|__source_|_span|span_|__span|_span_|__span_|_strong|strong_|__strong|_strong_|__strong_|_style|style_|__style|_style_|__style_|_sub|sub_|__sub|_sub_|__sub_|_sup|sup_|__sup|_sup_|__sup_|_table|table_|__table|_table_|__table_|_tbody|tbody_|__tbody|_tbody_|__tbody_|_td|td_|__td|_td_|__td_|_textarea|textarea_|__textarea|_textarea_|__textarea_|_tfoot|tfoot_|__tfoot|_tfoot_|__tfoot_|_th|th_|__th|_th_|__th_|_thread|thread_|__thread|_thread_|__thread_|_time|time_|__time|_time_|__time_|_title|title_|__title|_title_|__title__tr|tr_|__tr|_tr_|__tr_|_u|u_|__u|_u_|__u_|_ul|ul_|__ul|_ul_|__ul_|_var|var_|__var|_var_|__var_|_video|video_|__video|_video_|__video_|_channel|channel_|__channel|_channel_|__channel_|_language|language_|__language|_language_|__language_|_description|description_|__description|_description_|__description_|_item|item_|__item|_item_|__item_|_pubDate|pubDate_|__pubDate|_pubDate_|__pubDate_|_doctype|doctype_|__doctype|_comment|comment_|__comment|_ruby|ruby_|__ruby|_php|php_|__php|__pi|__cdata|__cgi|_xhtnl|xhtml_|_xml|xml_|rule|output|_template|template_|__template|_template_|__template_|_main|main_|__main|_main_|__main_|_with|with_|_each|each_|_unless|unless_|_if|_else|if_|__call|__bind|_svg|svg_|__svg|_svg_|__svg_|_g|g_|__g|_g_|__g_|_defs|defs_|__defs|_defs_|__defs_|_use|use_|__use|_use_|__use_|_path|path_|__path|_path_|__path_|_text|text_|__text|_text_|__text_|_line|line_|__line|_line_|__line_|_circle|circle_|__circle|_circle_|__circle_|_tspan|tspan_|__tspan|_tspan_|__tspan_|_mask|mask_|__mask|_mask_|__mask_|_rss|rss_|__rss|_rss_|__rss_|quote)\\b'
+  }
+  {
+    'begin': '(?<=^|[\\[{;])\\s*(regexp|regsub)\\b\\s*'
+    'beginCaptures':
+      '1':
+        'name': 'keyword.other.sml'
+    'comment': 'special-case regexp/regsub keyword in order to handle the expression'
+    'end': '[\\n;\\]]'
+    'patterns': [
+      {
+        'match': '\\\\(?:.|\\n)'
+        'name': 'constant.character.escape.sml'
+      }
+      {
+        'comment': 'switch for regexp'
+        'match': '-\\w+\\s*'
+      }
+      {
+        'applyEndPatternLast': 1
+        'begin': '--\\s*\\w+'
+        'comment': 'end of switches'
+        'end': ''
+        'patterns': [
+          {
+            'include': '#regexp'
+          }
+        ]
+      }
+      {
+        'include': '#regexp'
+      }
+    ]
+  }
+  {
+    'include': '#escape'
+  }
+  {
+    'include': '#variable'
+  }
+  {
+    'begin': '"'
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.definition.string.begin.sml'
+    'end': '"'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.definition.string.end.sml'
+    'name': 'string.quoted.double.sml'
+    'patterns': [
+      {
+        'include': '#escape'
+      }
+      {
+        'include': '#variable'
+      }
+      {
+        'include': '#embedded'
+      }
+    ]
+  }
+]
+'repository':
+  'bare-string':
+    'begin': '(?:^|(?<=\\s))"'
+    'comment': 'matches a single quote-enclosed word without scoping'
+    'end': '"([^\\s\\]]*)'
+    'endCaptures':
+      '1':
+        'name': 'invalid.illegal.sml'
+    'patterns': [
+      {
+        'include': '#escape'
+      }
+      {
+        'include': '#variable'
+      }
+    ]
+  'braces':
+    'begin': '(?:^|(?<=\\s))\\{'
+    'comment': 'matches a single brace-enclosed word'
+    'end': '\\}([^\\s\\]]*)'
+    'endCaptures':
+      '1':
+        'name': 'invalid.illegal.sml'
+    'patterns': [
+      {
+        'match': '\\\\[{}\\n]'
+        'name': 'constant.character.escape.sml'
+      }
+      {
+        'include': '#inner-braces'
+      }
+    ]
+  'embedded':
+    'begin': '\\['
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.section.embedded.begin.sml'
+    'end': '\\]'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.section.embedded.end.sml'
+    'name': 'source.sml.embedded'
+    'patterns': [
+      {
+        'include': 'source.sml'
+      }
+    ]
+  'escape':
+    'match': '\\\\(\\d{1,3}|x[a-fA-F0-9]+|u[a-fA-F0-9]{1,4}|.|\\n)'
+    'name': 'constant.character.escape.sml'
+  'inner-braces':
+    'begin': '\\{'
+    'comment': 'matches a nested brace in a brace-enclosed word'
+    'end': '\\}'
+    'patterns': [
+      {
+        'match': '\\\\[{}\\n]'
+        'name': 'constant.character.escape.sml'
+      }
+      {
+        'include': '#inner-braces'
+      }
+    ]
+  'regexp':
+    'begin': '(?=\\S)(?![\\n;\\]])'
+    'comment': 'matches a single word, named as a regexp, then swallows the rest of the command'
+    'end': '(?=[\\n;\\]])'
+    'patterns': [
+      {
+        'begin': '(?=[^ \\t\\n;])'
+        'end': '(?=[ \\t\\n;])'
+        'name': 'string.regexp.sml'
+        'patterns': [
+          {
+            'include': '#braces'
+          }
+          {
+            'include': '#bare-string'
+          }
+          {
+            'include': '#escape'
+          }
+          {
+            'include': '#variable'
+          }
+          {
+            'include': '#string'
+          }
+        ]
+      }
+      {
+        'begin': '[ \\t]'
+        'comment': 'swallow the rest of the command'
+        'end': '(?=[\\n;\\]])'
+        'patterns': [
+          {
+            'include': '#variable'
+          }
+          {
+            'include': '#embedded'
+          }
+          {
+            'include': '#escape'
+          }
+          {
+            'include': '#braces'
+          }
+          {
+            'include': '#inner-braces'
+          }
+        ]
+      }
+    ]
+  'string':
+    'applyEndPatternLast': 1
+    'begin': '(?:^|(?<=\\s))(?=")'
+    'comment': 'matches a single quote-enclosed word with scoping'
+    'end': ''
+    'name': 'string.quoted.double.sml'
+    'patterns': [
+      {
+        'include': '#bare-string'
+      }
+    ]
+  'variable':
+    'captures':
+      '1':
+        'name': 'punctuation.definition.variable.sml'
+    'match': '(\\$)((?:[a-zA-Z0-9_]|::)+(\\([^\\)]+\\))?|\\{[^\\}]*\\})'
+    'name': 'variable.other.sml'
+'scopeName': 'source.sml'

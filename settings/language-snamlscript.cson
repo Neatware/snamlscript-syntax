@@ -1,0 +1,6 @@
+'.source.sml':
+  'editor':
+    'increaseIndentPattern': '\\{[^"\'}]*$'
+'.source.antlr':
+  'editor':
+    'foldEndPattern': '^\\s*\\}'

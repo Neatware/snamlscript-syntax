@@ -1,0 +1,22 @@
+# See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Toggle language-snamlscript'
+      'command': 'language-snamlscript:toggle'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'language-snamlscript'
+      'submenu': [
+        {
+          'label': 'Toggle'
+          'command': 'language-snamlscript:toggle'
+        }
+      ]
+    ]
+  }
+]
